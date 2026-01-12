@@ -2,7 +2,7 @@ package com.algaworks.algasensors.device.management.api.client.impl;
 
 import com.algaworks.algasensors.device.management.api.client.RestClientFactory;
 import com.algaworks.algasensors.device.management.api.client.SensorMonitoringClient;
-import com.algaworks.algasensors.device.management.api.model.SensorMonitoringOuput;
+import com.algaworks.algasensors.device.management.api.model.SensorMonitoringOutput;
 import io.hypersistence.tsid.TSID;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
@@ -33,10 +33,10 @@ public class SensorMonitoringClientImpl implements SensorMonitoringClient {
     }
 
     @Override
-    public SensorMonitoringOuput getDetail(TSID sensorId) {
+    public SensorMonitoringOutput getDetail(TSID sensorId) {
         return restClient.get()
                 .uri("/api/sensors/{sensorId}/monitoring", sensorId)
                 .retrieve()
-                .body(SensorMonitoringOuput.class);
+                .body(SensorMonitoringOutput.class);
     }
 }
