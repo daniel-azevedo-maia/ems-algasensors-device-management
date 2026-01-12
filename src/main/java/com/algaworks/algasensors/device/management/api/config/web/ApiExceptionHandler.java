@@ -22,7 +22,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
             ClosedChannelException.class
     })
     public ProblemDetail handle(IOException e) {
-
         ProblemDetail problemDetail = ProblemDetail.forStatus(HttpStatus.GATEWAY_TIMEOUT);
 
         problemDetail.setTitle("Gateway timeout");
@@ -30,7 +29,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         problemDetail.setType(URI.create("/errors/gateway-timeout"));
 
         return problemDetail;
-
     }
 
     @ExceptionHandler(SensorMonitoringClientBadGatewayException.class)

@@ -10,11 +10,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Entity
 public class Sensor {
-
     @Id
     @AttributeOverride(name = "value", column = @Column(name = "id", columnDefinition = "BIGINT"))
     private SensorId id;
@@ -24,5 +24,4 @@ public class Sensor {
     private String protocol;
     private String model;
     private Boolean enabled;
-
 }

@@ -16,28 +16,25 @@ import java.util.Objects;
 @EqualsAndHashCode
 public class SensorId implements Serializable {
 
-    private TSID value; // O verdadeiro identificador do sensor (um TSID)
+    private TSID value;
 
-    // Construtor recebendo diretamente um TSID já pronto
     public SensorId(TSID value) {
-        Objects.requireNonNull(value); // Evita null
+        Objects.requireNonNull(value);
         this.value = value;
     }
 
-    // Construtor recebendo um número longo (como vem do banco)
     public SensorId(Long value) {
         Objects.requireNonNull(value);
-        this.value = TSID.from(value); // Converte long para TSID
+        this.value = TSID.from(value);
     }
 
-    // Construtor recebendo uma string (como vem de APIs ou JSON)
     public SensorId(String value) {
         Objects.requireNonNull(value);
-        this.value = TSID.from(value); // Converte string para TSID
+        this.value = TSID.from(value);
     }
 
     @Override
     public String toString() {
-        return value.toString(); // Quando imprimir, mostra a forma string do TSID
+        return value.toString();
     }
 }

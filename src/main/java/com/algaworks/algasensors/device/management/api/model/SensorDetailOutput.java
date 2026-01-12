@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class SensorDetailOutput {
-
     private SensorOutput sensor;
-    private SensorMonitoringOutput monitoring;
-
+    private SensorMonitoringOuput monitoring;
 }

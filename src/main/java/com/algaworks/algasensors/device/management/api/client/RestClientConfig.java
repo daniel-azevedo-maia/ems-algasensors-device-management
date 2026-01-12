@@ -11,14 +11,12 @@ public class RestClientConfig {
 
     @Bean
     public SensorMonitoringClient sensorMonitoringClient(RestClientFactory factory) {
-
         RestClient restClient = factory.temperatureMonitoringRestClient();
+
         RestClientAdapter adapter = RestClientAdapter.create(restClient);
-        HttpServiceProxyFactory proxyFactory =
-                HttpServiceProxyFactory.builderFor(adapter).build();
+        HttpServiceProxyFactory proxyFactory = HttpServiceProxyFactory.builderFor(adapter).build();
 
         return proxyFactory.createClient(SensorMonitoringClient.class);
-
     }
 
 }

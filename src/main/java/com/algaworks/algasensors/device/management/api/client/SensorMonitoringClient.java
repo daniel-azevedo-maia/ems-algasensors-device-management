@@ -1,6 +1,6 @@
 package com.algaworks.algasensors.device.management.api.client;
 
-import com.algaworks.algasensors.device.management.api.model.SensorMonitoringOutput;
+import com.algaworks.algasensors.device.management.api.model.SensorMonitoringOuput;
 import io.hypersistence.tsid.TSID;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.service.annotation.DeleteExchange;
@@ -18,6 +18,5 @@ public interface SensorMonitoringClient {
     void disableMonitoring(@PathVariable TSID sensorId);
 
     @GetExchange
-    SensorMonitoringOutput getDetail(@PathVariable TSID sensorId);
-
+    SensorMonitoringOuput getDetail(@PathVariable TSID sensorId);
 }
